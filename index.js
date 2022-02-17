@@ -10,14 +10,14 @@ app.get('/', async (request, response) => {
     response.send( await readFile('./home.html', 'utf-8') );
 });
 
-app.get('/tshirt', (req, res) => {
+app.get('/ball', (req, res) => {
     res.status(200).send({
-        tshirt: '👕',
-        size: 'large'
+        ball: '🏀',
+        type: 'basketball'
     }) 
 });
 
-app.post('/tshirt/:id', (req, res) => {
+app.post('/ball/:id', (req, res) => {
 
     const { id } = req.params;
     const { logo } = req.body;
@@ -27,7 +27,7 @@ app.post('/tshirt/:id', (req, res) => {
     }
 
     res.send({
-        tshirt: `\u{1F455} with your ${logo} logo and ID of ${id}`,
+        ball: `🏀 with your ${logo} logo and ID of ${id}`,
     });
 });
 
